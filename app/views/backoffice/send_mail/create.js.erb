@@ -1,0 +1,12 @@
+$(function(){
+  
+  let $sendMailModal = $('#sendMail');
+  $sendMailModal.modal('hide');
+  
+  $('#subject-text').val('')
+  $('#recipient-name').val('')
+  $('#message-text').val('')
+  
+  $.notify( "<%= @notify_message %>", "<%= @notify_flag %>")
+  
+})

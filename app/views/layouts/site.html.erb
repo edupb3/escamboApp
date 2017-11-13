@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title>Escamboapp</title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'site', media: 'all' %>    
+    
+    <%= csrf_meta_tags %>
+    
+  </head>
+
+  <body>
+    <div id="global-spin" class="loading" style='display:none'>Loading&#8230;</div>
+    <%= render partial: "layouts/site_shared/navigation" %>
+    <%= yield %>
+    <%= render partial: "layouts/site_shared/footer" %>
+    
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    
+  </body>
+
+</html>

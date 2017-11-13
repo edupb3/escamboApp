@@ -1,0 +1,8 @@
+'pt-BR':
+  messages:
+    confirm: Tem certeza?
+    confirm_with: Tem certeza que deseja excluir ( <B> %{item} </B> )?
+    new: Novo %{model}
+    edit: Editando %{model}
+    email_delivered: Email enviado com sucesso!
+    email_not_delivered: Falha ao enviar email!
