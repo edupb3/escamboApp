@@ -1,6 +1,5 @@
 class SiteController < ApplicationController
-  layout "site"
-  
+  layout "site" 
   
 end
                                                         
