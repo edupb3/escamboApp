@@ -52,6 +52,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap.growl'
   gem 'rails-assets-bootbox'
   gem 'rails-assets-animate-css'
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-marked'
 end
 
 # bootstrap The most popular front-end framework for developing responsive, mobile first projects on the web

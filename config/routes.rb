@@ -11,12 +11,14 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home', to:'home#index'    
-    resources :ads_details, only: [:show]
-    
+        
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :edit, :update, :new, :create]
     end
+    resources :ads_details, only: [:show]
+    resources :categories, only: [:show]
+
   end
   
   get 'dudu', to: 'site/home#index'
