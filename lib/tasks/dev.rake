@@ -50,7 +50,8 @@ namespace :dev do
       5.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4].sample),
-          description: LeroleroGenerator.paragraph(1),
+          description_short: LeroleroGenerator.paragraph(1),
+          description_md: markdown_fake,
           category: Category.all.sample,
           member: Member.first,
           price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -61,7 +62,8 @@ namespace :dev do
       100.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4].sample),
-          description: LeroleroGenerator.paragraph(1),
+          description_short: LeroleroGenerator.paragraph(1),
+          description_md: markdown_fake,
           category: Category.all.sample,
           member: Member.all.sample,
           price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -69,6 +71,10 @@ namespace :dev do
           finish_date: Date.today + Random.rand(90))
       end
     puts "Cadastrando Anúncios Fake - OK";
+  end
+  
+  def markdown_fake
+    %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
   end
 
   
