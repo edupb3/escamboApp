@@ -3,7 +3,7 @@ class Ad < ActiveRecord::Base
   belongs_to :member
   
   # Constants
-  QTT_PER_PAGE = 6
+  QTT_PER_PAGE = 50
   
   # Callbacks
   before_save :md_to_html

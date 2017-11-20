@@ -23,6 +23,10 @@ gem 'money-rails', '~>1'
 gem 'jquery-ui-rails'
 # The safe Markdown parser, reloaded. 
 gem 'redcarpet'
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record. 
+gem 'friendly_id'
+# If Turbolinks are not enough for you. Wiselinks makes your application work faster.
+gem 'wiselinks'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
