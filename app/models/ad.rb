@@ -3,7 +3,7 @@ class Ad < ActiveRecord::Base
   belongs_to :member
   
   # Constants
-  QTT_PER_PAGE = 50
+  QTT_PER_PAGE = 6
   
   # Callbacks
   before_save :md_to_html
@@ -13,9 +13,11 @@ class Ad < ActiveRecord::Base
   validates :price, numericality: {greater_than: 0}
   
   # Scopes
-  scope :descending_order, -> (quantity = 10) {  limit(quantity).order(description: :desc) }
-  scope :to_the, -> (current_member) {  where(member: current_member).limit(15)}
+  scope :descending_order, -> (page) {  order(description: :desc).page(page).per(QTT_PER_PAGE) }
+  scope :to_the, -> (current_member) {  where(member: current_member).limit(QTT_PER_PAGE)}
   scope :by_category, ->(id) { where(category: id).limit(QTT_PER_PAGE) }
+  scope :search, ->(term, page) { where("title LIKE ?", "%#{term}%").page(page).per(QTT_PER_PAGE) }
+  
   
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
