@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   
+  before_action :store_member_location!, if: :storable_location?
+  
   include Pundit
   
   # Rescuing a denied Authorization in Rails
@@ -26,7 +28,18 @@ class ApplicationController < ActionController::Base
   
   # pundit
   def user_not_authorized
-      flash[:alert] = "Você não está autorizado a executar esta ação" #I18n.t('messages.not_authorized')
-      redirect_to(request.referrer || root_path)
-    end
+    flash[:alert] = I18n.t('messages.not_authorized')
+    redirect_to(request.referrer || root_path)
+  end
+  
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr? 
+  end
+  
+  def store_member_location!
+    puts "Request FullPath -> #{request.fullpath} "
+    # :user is the scope we are authenticating
+    store_location_for(:member, request.fullpath)
+  end
+  
 end

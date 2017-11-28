@@ -1,9 +1,10 @@
 class Ad < ActiveRecord::Base
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
   
   # Constants
-  QTT_PER_PAGE = 6
+  QTT_PER_PAGE = 7
   
   # Callbacks
   before_save :md_to_html
@@ -15,7 +16,7 @@ class Ad < ActiveRecord::Base
   # Scopes
   scope :descending_order, -> (page) {  order(description: :desc).page(page).per(QTT_PER_PAGE) }
   scope :to_the, -> (current_member) {  where(member: current_member).limit(QTT_PER_PAGE)}
-  scope :by_category, ->(id) { where(category: id).limit(QTT_PER_PAGE) }
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
   scope :search, ->(term, page) { where("title LIKE ?", "%#{term}%").page(page).per(QTT_PER_PAGE) }
   
   

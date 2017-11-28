@@ -64,13 +64,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-marked'
 end
 
-# bootstrap The most popular front-end framework for developing responsive, mobile first projects on the web
-#gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-#gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-#gem 'rails-assets-bootbox', source: 'https://rails-assets.org'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 

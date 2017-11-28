@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
     resources :ads_details, only: [:show]
     resources :categories, only: [:show]
+    resources :comments, only: [:create]
 
   end
   

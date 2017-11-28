@@ -6,3 +6,4 @@
     edit: Editando %{model}
     email_delivered: Email enviado com sucesso!
     email_not_delivered: Falha ao enviar email!
+    not_authorized: Você não está autorizado a executar esta ação
