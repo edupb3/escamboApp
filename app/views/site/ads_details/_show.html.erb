@@ -7,17 +7,12 @@
         <h4><%= link_to @ad.title   %></h4>
         <%= @ad.description.html_safe %>
     </div>
-    <div class="ratings">
-        <p class="pull-right">3 reviews</p>
-        <p>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            4.0 stars
-        </p>
-    </div>
+    
+      <div class="ratings" style="padding: 5px">
+          <p> <%= rating_for @ad, 'quality' %> </p>            
+          <p class="pull-right"><%= @ad.rates("quality").count %> <%= t('labels.reviews') %></p>                      
+      </div>
+    
 </div>
 
 <div class="well">

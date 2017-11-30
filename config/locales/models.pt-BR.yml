@@ -58,10 +58,10 @@
         picture: Imagem
         price: Preço
         finish_date: Data de Finalização
-      profile_member:
+      profile_menber:
         id: Código
         created_at: Criado em
         updated_at: Atualizado em
         first_name: Primeiro nome
-        second_name: Segundo nome
+        last_name: Segundo nome
         birthdate: Data de nascimento
