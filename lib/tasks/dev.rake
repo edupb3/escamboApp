@@ -35,12 +35,16 @@ namespace :dev do
   task generate_members: :environment do
     puts "Cadastrando Membros Fake ";
       100.times do
-        Member.create!(
-          name: Faker::Name.name,
+        member = Member.new(
+          #name: Faker::Name.name,
           email: Faker::Internet.email,           
           password: '123456', 
           password_confirmation: '123456')
-      end
+        member.build_profile_menber
+        member.profile_menber.first_name = Faker::Name.first_name
+        member.profile_menber.last_name = Faker::Name.last_name
+        member.save!
+      end    
     puts "Cadastrando Membros Fake - OK";
   end
   

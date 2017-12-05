@@ -28,6 +28,13 @@ puts "Cadastrando Administrador Padrão ";
   Admin.create!(name:'Administrador Padrão', email: 'admin@admin.com', role: 0, password: '123456', password_confirmation: '123456')
 puts "Cadastrando Administrador Padrão - OK";
 
-puts "Cadastrando Membro Padrão ";
-  Member.create!(name:'Membro Padrão', email: 'member@member.com', password: '123456', password_confirmation: '123456')
+puts "Cadastrando Membro Padrão ";  
+  member = Member.new(          
+          email: 'member@member.com',           
+          password: '123456', 
+          password_confirmation: '123456')
+        member.build_profile_menber
+        member.profile_menber.first_name = Faker::Name.first_name
+        member.profile_menber.last_name = Faker::Name.last_name
+        member.save!
 puts "Cadastrando Membro Padrão - OK";

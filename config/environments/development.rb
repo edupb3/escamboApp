@@ -15,7 +15,7 @@ Rails.application.configure do
   config.web_console.whiny_requests = false
       
   # Devise config
-  # config.action_mailer.default_url_options =  { host: $IP, port: $PORT }
+  config.action_mailer.default_url_options =  { host: "https://rails-projects-edupb3.codeanyapp.com"}
   
   Paperclip.options[:command_path] = "/usr/bin/"
   
