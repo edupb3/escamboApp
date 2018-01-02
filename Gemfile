@@ -43,8 +43,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-# Manage Procfile-based applications
-gem 'foreman'
 # Rails gem of the Bootstrap based admin theme SB Admin 2.
 gem 'bootstrap_sb_admin_base_v2'
 # Minimal authorization through OO design and pure Ruby classes 
@@ -94,6 +92,8 @@ group :development do
   gem 'spring'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # Manage Procfile-based applications
+  gem 'foreman'
 end
 
 group :production do
