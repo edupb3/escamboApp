@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-
+ruby '2.3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n'
 # Use SCSS for stylesheets
@@ -86,17 +84,20 @@ group :development, :test do
 end
 
 group :development do
-  
   # Catches mail and serves it through a dream
   gem 'mailcatcher' 
-  
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  
   # Rails ERD - Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '0.18.3'
+  gem 'rails_12factor'
 end
 
